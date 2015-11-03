@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+#bar
 # Az első két sor: Ékezetes/magyar karakterek engedélyezése
 
 from sys import exit
