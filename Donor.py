@@ -35,4 +35,23 @@ if int(Weight) <= 50:
 
     # Amennyiben nem teljesül a követelmény, kilép a program.
 
+Blood_types = ["a", "b", "ab", "0"] # Blood Types kisbetűvel egy listában
+
+def i_need_your_blood_type():
+    global Blood  # a fügvényen kívül is használható
+    isvalid = False  # Egy változó a try/except -hez
+    while not isvalid:
+        Blood = input("%s bloodtype(A,B,AB or 0): " % enter)
+        try:
+            if str(Blood).lower() in Blood_types:  # Amit beírt, átkonvertálja kisbetűvé és benne van e a Blood_types-ban
+                isvalid = True
+            else:
+                print("Your bloodtype should be A , B , AB or 0! Try again!")
+        except: # Ötletem nincs minek kell ez ide, de enélkül nem fut :D
+            pass
+    return Blood  # Ha helyes térjen vissza az adattal
+
+
+i_need_your_blood_type()
+
 
