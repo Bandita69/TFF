@@ -1,28 +1,28 @@
 Getting data from user: (Initial Task - ból kimásolva)
 
-Name,  (Parse name, store it in a separated object)
+Name,  (Parse name, store it in a separated object) / Nóri
 
-Weight, (weight > 50)
+Weight, (weight > 50) / Bandi
 
-Gender, (Female or Male)
+Gender, (Female or Male) / Nóri
 
-Date of Birth, (age > 18 years) (How old is the donor in years based on date of birth?)
+Date of Birth, (age > 18 years) (How old is the donor in years based on date of birth?) / Ádám
 
-Last donation date, (last donation was more than 3 months ago)
+Last donation date, (last donation was more than 3 months ago) /Ádám
 
-Was he/she sick in the last month? (No)
+Was he/she sick in the last month? (No) /Atilla
 
-Unique identifier
+Unique identifier / Atilla
 
-Blood type (A, AB, B, 0)
+Blood type (A, AB, B, 0) / Bandi
 
-Expiration of ID (ID is not expired.) (Define type of personal document based on its identifier:
+Expiration of ID (ID is not expired.) (Define type of personal document based on its identifier: /Bandi
 6digit + 2letter (123456AB) is identity card
 6letter + 2digit (ASDFGH12) is passport) 
 
-Email address (Email address validation (contains @-ot and ending with .hu/.com))
+Email address (Email address validation (contains @-ot and ending with .hu/.com)) / Máté
 
-Mobil number (Mobil number validation (starts with +36/06 + 2 digit(provider identifier - 20/30/70) ending with 7 digits))
+Mobil number (Mobil number validation (starts with +36/06 + 2 digit(provider identifier - 20/30/70) ending with 7 digits)) /Máté
 
 
 Write out data in a table form pl.:
