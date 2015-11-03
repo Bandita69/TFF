@@ -1,4 +1,0 @@
-adssadsadsadadsadsaadsdassadsadsadadssad
-wofjneéoveov
-
-TROLOLOLOLOLOL ÉS ÉJFÉLKOR JÖN A KRAMPUSZ
