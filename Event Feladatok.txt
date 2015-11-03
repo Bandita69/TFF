@@ -1,0 +1,35 @@
+Donation event registration:
+
+Getting data from user:
+
+
+Date of event (Datetime can be only on weekdays
+you can use datetime.isoweekday() function to determine it)(Registration should occur before the event at least 10 days
+)
+
+Start time of donation (Calculate duration in minutes based on start and endtime
+You can use datetime.strptime and  timedelta.total_seconds functions)
+
+End time of donation(You can use datetime.strptime to convert the string into datetime type.)
+
+Zip code (only 4 digit positive integers allowed) ZIP is valid only when it contains exactly 4 digit and the first one is not 0,
+
+City (See below) City is in this list: Miskolc, Kazincbarcika, Szerencs, Sarospatak
+
+Address 
+
+How many bed will be available?( (Only positive integers allowed) max_donor_number =
+((event_duration_in_minutes - preparation_time) / donation_time) * number_of_beds)
+
+Planned donor number (Only positive integers allowed)
+
+preparation_time = 30
+donation_time = 30
+At the end of the event registration ask the user about how many successfull donation was on the event and store it as an integer!
+
+
+How the donation was successfull? The realized donation number:
+is below 20% of planned: "Unsuccessfull, not worths to organise there again"
+is between 20-75% of planned: "Normal event"
+is between 75-110% of planned: "Successfull"
+is above 110% of planned: "Outstanding"
