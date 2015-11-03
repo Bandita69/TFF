@@ -1,0 +1,1 @@
+# ide kerulnek majd az event-hez tartozo fuggvenyek
