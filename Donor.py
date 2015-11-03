@@ -10,9 +10,9 @@ enter = "Enter your"
 
 Blood_types = ["a", "b", "ab", "0"] # Blood Types kisbetűvel egy listában
 
+
 class DonorData(object):
-
-
+    @staticmethod
     def i_need_your_kg():
         global Weight  # a fügvényen kívül is használható
         isvalid = False  # Egy változó a try/except -hez
