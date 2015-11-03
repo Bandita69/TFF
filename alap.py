@@ -20,7 +20,7 @@ def i_need_your_kg():
         except ValueError:  # Próbálja újra
             print("Nice, but", Weight, "is not a egész number. Try again! \n")
     return Weight  # Ha helyes térjen vissza az adattal
-    #RANDOM COMMENT TEST
+
 
 
 i_need_your_kg()
