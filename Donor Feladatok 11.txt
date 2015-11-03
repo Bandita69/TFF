@@ -12,13 +12,14 @@ Last donation date, (last donation was more than 3 months ago) /Ádám
 
 Was he/she sick in the last month? (No) /Atilla
 
-Unique identifier / Atilla
+Unique identifier (Define type of personal document based on its identifier:
+6digit + 2letter (123456AB) === identity card
+6letter + 2digit (ASDFGH12) === passport)  / Atilla
 
 Blood type (A, AB, B, 0) / Bandi
 
-Expiration of ID (ID is not expired.) (Define type of personal document based on its identifier: /Bandi
-6digit + 2letter (123456AB) is identity card
-6letter + 2digit (ASDFGH12) is passport) 
+Expiration of ID (ID is not expired.)  /Bandi
+
 
 Email address (Email address validation (contains @-ot and ending with .hu/.com)) / Máté
 
