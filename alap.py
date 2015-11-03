@@ -10,7 +10,7 @@ enter = "Enter your"
 
 
 def i_need_your_kg():
-    global Weight
+    global Weight  # a fügvényen kívül is használható
     isvalid = False  # Egy változó a try/except -hez
     while not isvalid:  # Amíg nem igaz
         Weight = input("%s weight(ex.: 69): " % enter)
@@ -20,7 +20,7 @@ def i_need_your_kg():
         except ValueError:  # Próbálja újra
             print("Nice, but", Weight, "is not a egész number. Try again! \n")
     return Weight  # Ha helyes térjen vissza az adattal
-    #RANDOM COMMENT TEST
+
 
 
 i_need_your_kg()
@@ -31,7 +31,7 @@ print(Weight)
 # Teszt hogy az a változó amit bekért
 
 if int(Weight) <= 50:
-    exit("Sorry, you are not fluffy enough!")
+    exit("Sorry, you are not fat enough!")
 
     # Amennyiben nem teljesül a követelmény, kilép a program.
 
