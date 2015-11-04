@@ -180,3 +180,39 @@ class DonorData(object):
                 print("Try Again!")
 
         return gender.lower()
+
+    # @Atilla
+    # Determining whether the donor was sick in the last month.
+    @staticmethod
+    def get_sickness():
+        yes_or_no = ""
+        # Asks for an input here first.
+        yes_or_no = input("Was the donor sick in the last month? Y or N: ")
+        poss_ans = ["Y", "y", "N", "n"]
+        # While the given answer is not in the above list it keeps asking.
+        while yes_or_no not in poss_ans:
+            yes_or_no = input("Wrong format. Please use Y or N: ")
+        # Returns the acceptable answer.
+        return yes_or_no.upper()
+
+    # @Atilla
+    # Asks the donor's unique identifier and determines whether it suggests a national ID or a passport.
+    @staticmethod
+    def get_id_number():
+        id_number = ""
+        # Asks for the ID number here first.
+        id_number = input("Please type the donor's ID number: ")
+        # Keeps asking while it is not 8 characters long and only alphanumeric.
+        while len(id_number) != 8 or not id_number.isalnum():
+            id_number = input("Wrong format. The ID has to be 8 characters long and contain only letters and numbers: ")
+
+        # Defines whether the given string suggests a national ID number or a passport number.
+        if id_number[:6].isdigit() and id_number[6:].isalpha:
+            print("Your ID number is recorded.")
+        elif id_number[:2].isalpha() and id_number[2:].isdigit:
+            print("Your passport number is recorded.")
+        else:
+            # If it does not match any of the two mentioned, it says so too.
+            print("The format of your ID number could not be defined, however it was recorded.")
+
+        return id_number

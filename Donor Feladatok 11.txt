@@ -10,11 +10,11 @@ Date of Birth, (age > 18 years) (How old is the donor in years based on date of 
 
 Last donation date, (last donation was more than 3 months ago) /Ádám
 
-Was he/she sick in the last month? (No) /Atilla
+Was he/she sick in the last month? (No) /Atilla KÉSZ
 
 Unique identifier (Define type of personal document based on its identifier:
 6digit + 2letter (123456AB) === identity card
-6letter + 2digit (ASDFGH12) === passport)  / Atilla
+6letter + 2digit (ASDFGH12) === passport)  / Atilla KÉSZ
 
 Blood type (A, AB, B, 0) / Bandi  KÉSZ
 
