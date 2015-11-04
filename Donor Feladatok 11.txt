@@ -1,6 +1,6 @@
 Getting data from user: (Initial Task - ból kimásolva)
 
-Name,  (Parse name, store it in a separated object) / Nóri
+Name,  (Parse name, store it in a separated object) / Nóri KÉSZ
 
 Weight, (weight > 50) / Bandi  KÉSZ
 
@@ -32,4 +32,4 @@ Attila, Molnár
 1989.05.06 - 26 years old
 asd@test.hu
 
-+ Generate random number: Hemogblobin level between 80-200, write out is the donor suitable or not (value is greather than 110)?
++ Generate random number: Hemogblobin level between 80-200, write out is the donor suitable or not (value is greather than 110)?/ Bandi kész
