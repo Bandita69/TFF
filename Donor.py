@@ -30,7 +30,7 @@ class DonorData(object):
                 isvalid = True
             except ValueError:  # Próbálja újra
                 print("Nice, but", Weight, "is not a egész number. Try again! \n")
-        return Weight  # Ha helyes térjen vissza az adattal
+        return int(Weight)  # Ha helyes térjen vissza az adattal
 
     """
     i_need_your_kg(): # Fügvény meghívása
@@ -181,7 +181,7 @@ class DonorData(object):
 
         return gender.lower()
 
-    # @Atilla
+    # SICKNESS (Atilla)
     # Determining whether the donor was sick in the last month.
     @staticmethod
     def get_sickness():
@@ -189,25 +189,23 @@ class DonorData(object):
         # Asks for an input here first.
         yes_or_no = input("Was the donor sick in the last month? Y or N: ")
         poss_ans = ["Y", "y", "N", "n"]
-        # While the given answer is not in the above list it keeps asking.
+        # Keeps asking for the input while it is not in the above list.
         while yes_or_no not in poss_ans:
             yes_or_no = input("Wrong format. Please use Y or N: ")
-
         # Returns with Y or N.
         return yes_or_no.upper()
 
-    # @Atilla
+    # ID NUMBER (Atilla)
     # Asks the donor's unique identifier and determines whether it suggests a national ID or a passport.
     @staticmethod
     def get_id_number():
         id_number = ""
         # Asks for the ID number here first.
-        id_number = input("Please type the donor's ID number: ")
-        # Keeps asking while it is not 8 characters long and only alphanumeric.
+        id_number = input("Please enter the donor's ID number: ")
+        # Keeps asking for the input while it is not 8 characters long and only alphanumeric.
         while len(id_number) != 8 or not id_number.isalnum():
             id_number = input("Wrong format. The ID has to be 8 characters long and contain only letters and numbers: ")
-
-        # Defines whether the given string suggests a national ID number or a passport number.
+        # Decides whether the given string suggests a national ID number or a passport number.
         if id_number[:6].isdigit() and id_number[6:].isalpha:
             print("Your ID number is recorded.")
         elif id_number[:2].isalpha() and id_number[2:].isdigit:
@@ -215,27 +213,21 @@ class DonorData(object):
         else:
             # If it does not match any of the two mentioned, it says so too.
             print("The format of your ID number could not be defined, however it was recorded.")
-
         # Returns with the ID number.
         return id_number
 
-    # @Atilla
+    # LAST DONATION DATE (Atilla)
     # Determines whether the donor's last donation was more than 3 months ago or not.
     @staticmethod
     def get_donation_date():
         # Asks for the last donation date of the donor.
-        donation_date = input("Please type the donor's last donation date in the following format 2000.12.31: ")
-        # Keeps asking while the given date does not match the right format.
+        donation_date = input("Please enter the donor's last donation date in the following format 2000.12.31: ")
+        # Keeps asking for the input while the given date does not match the right format.
         while len(donation_date) != 10 or\
                 donation_date[4] != "." or\
                 donation_date[7] != "." or\
                 not donation_date.replace(".", "").isdigit():
-            donation_date = input("Wrong format. Please use the following date form 2000.12.31: ")
-        # Converts the given date for date format and puts it in variable.
+            donation_date = input("Wrong format. Please enter the following date form 2000.12.31: ")
+        # Converts the given numbers to date format and puts it in variable.
         d_d = datetime.strptime(donation_date, '%Y.%m.%d')
-
-        # Returns False if the last donation date was less than 3 months ago.
-        if (datetime.now() - d_d).days < 90:
-            return False
-        # Otherwise returns True, so the donor is suitable.
-        return True
+        return d_d
