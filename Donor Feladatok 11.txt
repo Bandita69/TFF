@@ -2,7 +2,7 @@ Getting data from user: (Initial Task - ból kimásolva)
 
 Name,  (Parse name, store it in a separated object) / Nóri
 
-Weight, (weight > 50) / Bandi
+Weight, (weight > 50) / Bandi  KÉSZ
 
 Gender, (Female or Male) / Nóri
 
@@ -16,9 +16,9 @@ Unique identifier (Define type of personal document based on its identifier:
 6digit + 2letter (123456AB) === identity card
 6letter + 2digit (ASDFGH12) === passport)  / Atilla
 
-Blood type (A, AB, B, 0) / Bandi
+Blood type (A, AB, B, 0) / Bandi  KÉSZ
 
-Expiration of ID (ID is not expired.)  /Bandi
+Expiration of ID (ID is not expired.)  /Bandi  KÉSZ
 
 
 Email address (Email address validation (contains @-ot and ending with .hu/.com)) / Máté
