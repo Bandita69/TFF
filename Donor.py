@@ -148,7 +148,7 @@ class DonorData(object):
             Name = input("Enter your full name: ")
 
             split_Name = Name.split(" ")  # szétszedi a bekért adatot név részekre
-    
+
             try:
                 if Name.replace(" ", "").isalpha() and len(split_Name) > 1:  # A név legalább 2 részből áll és csak betűket tartlmazhat
                     isvalid = True
@@ -159,6 +159,18 @@ class DonorData(object):
                 pass
 
         return Name
+
+    def get_gender():
+        entered_data_is_valid = False
+        available_genders = ["f", "m"]
+        while not entered_data_is_valid:
+            gender = input("Enter your sex: (F for Female/M for Male)")
+            if gender.lower() in available_genders:
+                entered_data_is_valid = True
+            else:
+                print("Try Again!")
+
+        return gender.lower()
 
 
 
