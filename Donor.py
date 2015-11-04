@@ -141,30 +141,34 @@ class DonorData(object):
 
         return mobile_number
 
-    @staticmethod
     def i_need_your_name():
-        global name     # A fügévnyen kívül is lehet használni ezt a változót
+        global Name# A fügévnyen kívül is lehet használni ezt a változót
+        global split_Name
         isvalid = False
         while not isvalid:
-            name = input("Enter your full name: ")
+            Name = input("Enter your full name: ")
 
-            split_name = name.split(" ")        # Szétszedi a bekért adatot név részekre
+            split_Name = Name.split(" ")  # szétszedi a bekért adatot név részekre
 
             try:
-                isvalid = name.replace(" ", "").isalpha()\
-                          and len(split_name) > 1       # A név legalább 2 részből áll és csak betűket tartlmazhat
+                if Name.replace(" ", "").isalpha() and len(split_Name) > 1:  # A név legalább 2 részből áll és csak betűket tartlmazhat
+                    isvalid = True
 
-                if not isvalid:
-                    raise ValueError
+                else:  # Ha pl számokat adott meg  akkor ezt ki írja és újra lekéri.
+                    print("Try Again, it is not a name. The name can contain only letters and space! ex.: Angela Smith")
+            except:
+                pass
 
-            except ValueError:      # Ha pl számokat adott meg  akkor ezt ki írja és újra lekéri.
-                print("Try Again, it is not a name. The name can contain only letters and space! ex.: Angela Smith")
+        return Name
+    """
+    i_need_your_name()
+    FirstName = split_Name[0]
+    LastName = split_Name[1]
+    print(FirstName, end=", ")
+    print(LastName)
+    """
 
-        return name
-
-    @staticmethod
     def get_gender():
-        global gender
         entered_data_is_valid = False
         available_genders = ["f", "m"]
         while not entered_data_is_valid:
