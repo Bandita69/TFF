@@ -3,6 +3,8 @@
 
 # Az első két sor: Ékezetes/magyar karakterek engedélyezése
 
+import random
+# Random beimpotálása
 from datetime import datetime
 # Beimportálja a datetime-t
 
@@ -76,9 +78,18 @@ class DonorData(object):
     if exp < datetime.now():  # Ha a jelenlegi idő( . now) előtti a bekért adat
         exit("LEJART")   # Ki írja hogy Lejárt és kilép
     """
+    # + Generate random number: Hemogblobin level between 80-200 , that must be higher than 110
 
-
-
+    def hemo_level():
+        global level # Fügvényen kívül is lehet használni
+        level = (random.randrange(80,200))  # 80 és 200 között generáljon egy számot
+        if level > 110:
+            return level  # ha nagyobb mint 110 térjen vissza vele
+        else:
+            exit("Your Hemogblobin level is not high enough")  # ha kisebb mint 110 lépjen ki
+    """
+    hemo_level() # Fügvény meghívása
+    """
 
 
 
