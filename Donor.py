@@ -42,7 +42,7 @@ class DonorData(object):
         # Amennyiben nem teljesül a követelmény, kilép a program.
     """
 
-
+    @staticmethod
     #Blood type
     def i_need_your_blood_type():
         global Blood  # a fügvényen kívül is használható
@@ -58,6 +58,7 @@ class DonorData(object):
                 pass
         return Blood  # Ha helyes térjen vissza az adattal
 
+    @staticmethod
     # Expiration of ID
     def i_need_your_exp():
         global date_of_exp   # a fügvényen kívül is használható
@@ -80,6 +81,7 @@ class DonorData(object):
     """
     # + Generate random number: Hemogblobin level between 80-200 , that must be higher than 110
 
+    @staticmethod
     def hemo_level():
         global level # Fügvényen kívül is lehet használni
         level = (random.randrange(80,200))  # 80 és 200 között generáljon egy számot
@@ -90,6 +92,53 @@ class DonorData(object):
     """
     hemo_level() # Fügvény meghívása
     """
+
+    @staticmethod
+    # Email address
+    def get_email_address():        # The function asks for a valid email address
+        global email_address
+        isvalid = False
+
+        while not isvalid:
+            email_address = input("%s email address: " % enter)
+            try:
+                email_address_string = email_address.replace(" ", "")
+                contains_at_sign = "@" in email_address_string and email_address_string.index("@") > 0
+                ending_is_valid = email_address_string.endswith(".hu") or email_address_string.endswith(".com")
+
+                isvalid = contains_at_sign and ending_is_valid
+
+                if not isvalid:     # If any of the above conditions is False, it raises a ValueError
+                    raise ValueError
+
+            except ValueError:
+                print("The given '%s' email address is not in a valid format. Try again! \n" % email_address)
+        return email_address
+
+    @staticmethod
+    # Mobile number
+    def get_mobile_number():        # The function asks for a valid mobile number
+        global mobile_number
+        isvalid = False
+
+        while not isvalid:
+            mobile_number = input("%s mobile number: " % enter)
+            try:
+                mobile_number_string = mobile_number.replace(" ", "")
+                startswith_36_or_06 = mobile_number_string.startswith("+36") or mobile_number_string.startswith("06")
+                contains_20_30_70 = "20" in mobile_number_string or "30" in mobile_number_string\
+                                    or "70" in mobile_number_string
+                valid_length = len(mobile_number_string) == 11
+
+                isvalid = startswith_36_or_06 and contains_20_30_70 and valid_length
+
+                if not isvalid:         # If any of the above conditions is False it raises a ValueError
+                    raise ValueError
+
+            except ValueError:
+                print("The given '%s' mobile number is not in a valid format!" % mobile_number)
+
+        return mobile_number
 
 
 
