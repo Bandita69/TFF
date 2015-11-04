@@ -192,7 +192,8 @@ class DonorData(object):
         # While the given answer is not in the above list it keeps asking.
         while yes_or_no not in poss_ans:
             yes_or_no = input("Wrong format. Please use Y or N: ")
-        # Returns the acceptable answer.
+
+        # Returns with Y or N.
         return yes_or_no.upper()
 
     # @Atilla
@@ -215,4 +216,26 @@ class DonorData(object):
             # If it does not match any of the two mentioned, it says so too.
             print("The format of your ID number could not be defined, however it was recorded.")
 
+        # Returns with the ID number.
         return id_number
+
+    # @Atilla
+    # Determines whether the donor's last donation was more than 3 months ago or not.
+    @staticmethod
+    def get_donation_date():
+        # Asks for the last donation date of the donor.
+        donation_date = input("Please type the donor's last donation date in the following format 2000.12.31: ")
+        # Keeps asking while the given date does not match the right format.
+        while len(donation_date) != 10 or\
+                donation_date[4] != "." or\
+                donation_date[7] != "." or\
+                not donation_date.replace(".", "").isdigit():
+            donation_date = input("Wrong format. Please use the following date form 2000.12.31: ")
+        # Converts the given date for date format and puts it in variable.
+        d_d = datetime.strptime(donation_date, '%Y.%m.%d')
+
+        # Returns False if the last donation date was less than 3 months ago.
+        if (datetime.now() - d_d).days < 90:
+            return False
+        # Otherwise returns True, so the donor is suitable.
+        return True
