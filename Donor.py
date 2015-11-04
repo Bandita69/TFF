@@ -142,7 +142,8 @@ class DonorData(object):
         return mobile_number
 
     def i_need_your_name():
-        global Name  # A fügévnyen kívül is lehet használni ezt a változót
+        global Name# A fügévnyen kívül is lehet használni ezt a változót
+        global split_Name
         isvalid = False
         while not isvalid:
             Name = input("Enter your full name: ")
@@ -159,6 +160,13 @@ class DonorData(object):
                 pass
 
         return Name
+    """
+    i_need_your_name()
+    FirstName = split_Name[0]
+    LastName = split_Name[1]
+    print(FirstName, end=", ")
+    print(LastName)
+    """
 
     def get_gender():
         entered_data_is_valid = False
