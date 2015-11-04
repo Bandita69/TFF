@@ -4,7 +4,7 @@ Name,  (Parse name, store it in a separated object) / Nóri KÉSZ
 
 Weight, (weight > 50) / Bandi  KÉSZ
 
-Gender, (Female or Male) / Nóri
+Gender, (Female or Male) / Nóri KÉSZ
 
 Date of Birth, (age > 18 years) (How old is the donor in years based on date of birth?) / Ádám
 
@@ -21,9 +21,9 @@ Blood type (A, AB, B, 0) / Bandi  KÉSZ
 Expiration of ID (ID is not expired.)  /Bandi  KÉSZ
 
 
-Email address (Email address validation (contains @-ot and ending with .hu/.com)) / Máté
+Email address (Email address validation (contains @-ot and ending with .hu/.com)) / Máté KÉSZ
 
-Mobil number (Mobil number validation (starts with +36/06 + 2 digit(provider identifier - 20/30/70) ending with 7 digits)) /Máté
+Mobil number (Mobil number validation (starts with +36/06 + 2 digit(provider identifier - 20/30/70) ending with 7 digits)) /Máté KÉSZ
 
 
 Write out data in a table form pl.:
