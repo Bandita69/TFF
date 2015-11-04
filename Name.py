@@ -1,27 +1,20 @@
-def get_string_from_console(name_of_data: str, form_instruction=""):
+def i_need_your_name():
+    global Name  # A fügévnyen kívül is lehet használni ezt a változót
+    isvalid = False
+    while not isvalid:
+        Name = input("Enter your full name: ")
 
-    data_string = ""
-    while not data_string:
-        data_string = input("{0} {1}{2}:".format(ENTER_DATA_TEXT, name_of_data, form_instruction))
-        if not data_string:
-            print("This can't be empty!")
+        split_Name = Name.split(" ")  # szétszedi a bekért adatot név részekre
 
-    return data_string
+        try:
+            if Name.replace(" ", "").isalpha() and len(split_Name) > 1:  # A név legalább 2 részbõl áll és csak betûket tartlmazhat
+                isvalid = True
 
-def name_is_valid(name_string: str):
-    splitted_name = name_string.split(" ")
-    return name_string.replace(" ", "").isalpha() and len(splitted_name) > 1
+            else:  # Ha pl számokat adott meg  akkor ezt ki írja és újra lekéri.
+                print("Try Again, it is not a name. The name can contain only letters and space! ex.: Angela Smith")
+        except:
+            pass
 
-def get_name():
-    entered_data_is_valid = False
-    name_string = ""
-    name_form_instruction = " (FirstName LastName)"
-
-    while not entered_data_is_valid:
-        name_string = get_string_from_console("name", name_form_instruction)
-        if name_is_valid(name_string):
-            entered_data_is_valid = True
-        else:
-            print("The name can contain only letters and space!".format(name_form_instruction))
-
-    return name_string
+    return Name
+i_need_your_name()
+print(Name)
