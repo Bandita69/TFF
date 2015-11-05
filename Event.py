@@ -1,5 +1,6 @@
 from _datetime import datetime
 
+
 preparation_time = 30
 donation_time = 30
 
@@ -18,11 +19,20 @@ class EventData(object):
         return True
 
     # @Bandi
-    # Definition explanation comes here...
+    # Definition explanation comes here... A donation event vége. HH:MM formátmban, pl 12:10
+    # NAGYOBBNAK KELL LENNIE MINT A don_start! (Work in progress)
     @staticmethod
     def get_donation_end():
-        return True
-
+        global don_end
+        isvaild = False
+        while not isvaild:
+            data = input("Enter your End of donation (HH:MM):")
+            try:
+                don_end = datetime.strptime(data, "%H:%M") # Csak akkor engedi tovább az adatot ha ilyen formátumba van
+                isvaild = True
+            except ValueError:
+                print(data, "is not a valid time! HH:MM. ex: 13:10")
+        return don_end
     # @Bandi
     # Definition explanation comes here... nem nulla az első szám, és 4 karakter valamint csak számok.
 
