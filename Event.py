@@ -10,8 +10,19 @@ class EventData(object):
     # Definition explanation comes here...
     @staticmethod
     def get_event_date():
-        return True
-
+        global ev_date
+        isvaild = False
+        while not isvaild:
+            data = input("Enter your Event date (YYYY.MM.DD):")
+            try:
+                ev_date = datetime.strptime(data, "%Y.%m.%d") # Csak akkor engedi tovább az adatot ha ilyen formátumba van
+                if (ev_date.date() - datetime.now().date()).days > 10:
+                    isvaild = True
+                else:
+                    print("Your donation date have to be 10 days later from now")
+            except ValueError:
+                print(data, "is not vaild date! Try again(YYYY.MM.DD): ex: 2010.10.10")
+        return ev_date
     # @Nori
     # Definition explanation comes here...
     @staticmethod
