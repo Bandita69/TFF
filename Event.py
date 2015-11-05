@@ -24,7 +24,7 @@ class EventData(object):
         return True
 
     # @Bandi
-    # Definition explanation comes here... nem nulla az ellső szám, és 4 karakter
+    # Definition explanation comes here... nem nulla az első szám, és 4 karakter valamint csak számok.
 
     @staticmethod
     def get_zip_code():
@@ -38,7 +38,7 @@ class EventData(object):
                     if ZIP[0] != "0":
                         isvaild = True
                     else:
-                        print(ZIP, "in not vaild! 1. number must not be 0!")
+                        print(ZIP, "is not vaild! 1. number must not be 0!")
                 else:
                     print("ZIP must be 4 digits!")
             except ValueError:
