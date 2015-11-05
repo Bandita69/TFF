@@ -78,11 +78,8 @@ class DonorData(object):
         return date_of_exp
 
     """
-    i_need_your_exp()  # Fügvény meghívása
-    exp = i_need_your_exp()  # Változó a fügvénynek
-
-    if exp < datetime.now():  # Ha a jelenlegi idő( . now) előtti a bekért adat
-        exit("LEJART")   # Ki írja hogy Lejárt és kilép
+    if date_of_exp is False:
+        exit("Lejárt")
     """
     # + Generate random number: Hemogblobin level between 80-200 , that must be higher than 110
 
