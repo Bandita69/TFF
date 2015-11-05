@@ -33,9 +33,7 @@ class DonorData(object):
         return int(Weight)  # Ha helyes térjen vissza az adattal
 
     """
-    i_need_your_kg(): # Fügvény meghívása
-    print(Weight)
-    # Teszt hogy az a változó amit bekért
+    
 
     if int(Weight) <= 50:
         exit("Sorry, you are not fat enough!")

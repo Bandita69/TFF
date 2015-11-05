@@ -44,7 +44,6 @@ class EventData(object):
 
     # @Bandi
     # Definition explanation comes here... A donation event vége. HH:MM formátmban, pl 12:10
-    # NAGYOBBNAK KELL LENNIE MINT A don_start! (Work in progress)
     @staticmethod
     def get_donation_end():
         global don_end
