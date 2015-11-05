@@ -68,7 +68,11 @@ class DonorData(object):
             data = input("Type your exp date: yyyy.mm.dd: ") # Helyes adat pl.: 1999/10/10
             try:
                 date_of_exp = datetime.strptime(data, "%Y.%m.%d") # Csak akkor engedi tovább az adatot ha ilyen formátumba van
-                isvaild = True
+                if date_of_exp > datetime.now():
+                    isvaild = True
+                elif date_of_exp < datetime.now():
+                    date_of_exp = False
+                    return False
             except:
                 print("Try again! (yyyy.mm.dd) : \n")
         return date_of_exp
@@ -90,9 +94,7 @@ class DonorData(object):
             return level  # ha nagyobb mint 110 térjen vissza vele
         else:
             exit("Your Hemogblobin level is not high enough")  # ha kisebb mint 110 lépjen ki
-    """
-    hemo_level() # Fügvény meghívása
-    """
+
 
     @staticmethod
     # Email address
