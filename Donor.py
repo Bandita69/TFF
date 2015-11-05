@@ -65,12 +65,12 @@ class DonorData(object):
         global date_of_exp   # a fügvényen kívül is használható
         isvaild = False  # Egy változó a try/except -hez
         while not isvaild:
-            data = input("Type your exp date: yyyy/mm/dd: ") # Helyes adat pl.: 1999/10/10
+            data = input("Type your exp date: yyyy.mm.dd: ") # Helyes adat pl.: 1999/10/10
             try:
-                date_of_exp = datetime.strptime(data, "%Y/%m/%d") # Csak akkor engedi tovább az adatot ha ilyen formátumba van
+                date_of_exp = datetime.strptime(data, "%Y.%m.%d") # Csak akkor engedi tovább az adatot ha ilyen formátumba van
                 isvaild = True
             except:
-                print("Try again! (yyyy/mm/dd) : \n")
+                print("Try again! (yyyy.mm.dd) : \n")
         return date_of_exp
 
     """
