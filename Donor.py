@@ -65,12 +65,12 @@ class DonorData(object):
         global date_of_exp   # a fügvényen kívül is használható
         isvaild = False  # Egy változó a try/except -hez
         while not isvaild:
-            data = input("Type your exp date: yyyy/mm/dd: ") # Helyes adat pl.: 1999/10/10
+            data = input("Type your exp date: yyyy.mm.dd: ") # Helyes adat pl.: 1999/10/10
             try:
-                date_of_exp = datetime.strptime(data, "%Y/%m/%d") # Csak akkor engedi tovább az adatot ha ilyen formátumba van
+                date_of_exp = datetime.strptime(data, "%Y.%m.%d") # Csak akkor engedi tovább az adatot ha ilyen formátumba van
                 isvaild = True
             except:
-                print("Try again! (yyyy/mm/dd) : \n")
+                print("Try again! (yyyy.mm.dd) : \n")
         return date_of_exp
 
     """
@@ -102,18 +102,21 @@ class DonorData(object):
 
         while not isvalid:
             email_address = input("%s email address: " % enter)
-            try:
-                email_address_string = email_address.replace(" ", "")
-                contains_at_sign = "@" in email_address_string and email_address_string.index("@") > 0
-                ending_is_valid = email_address_string.endswith(".hu") or email_address_string.endswith(".com")
+            email_address_string = email_address.replace(" ", "")
+            contains_at_sign = "@" in email_address_string and email_address_string.index("@") > 0
+            ending_is_valid = email_address_string.endswith(".hu") or email_address_string.endswith(".com")
 
-                isvalid = contains_at_sign and ending_is_valid
+            isvalid = contains_at_sign and ending_is_valid
 
-                if not isvalid:     # If any of the above conditions is False, it raises a ValueError
-                    raise ValueError
+            if not isvalid:     # If it's not a valid address, the user gets this message.
+                print("The given '%s' email address is not in a valid format!" % email_address)
 
-            except ValueError:
-                print("The given '%s' email address is not in a valid format. Try again! \n" % email_address)
+            if not contains_at_sign:        # If the address misses an '@' sign, the user gets this message as well.
+                print("Please add an '@' sign in your address!")
+
+            if not ending_is_valid:                               # If the address misses the email providers location,
+                print("Please specify where your email provider is ('.com' or '.hu')!")   # the user gets this message.
+
         return email_address
 
     @staticmethod
@@ -124,20 +127,25 @@ class DonorData(object):
 
         while not isvalid:
             mobile_number = input("%s mobile number: " % enter)
-            try:
-                mobile_number_string = mobile_number.replace(" ", "")
-                startswith_36_or_06 = mobile_number_string.startswith("+36") or mobile_number_string.startswith("06")
-                contains_20_30_70 = "20" in mobile_number_string or "30" in mobile_number_string\
+            mobile_number_string = mobile_number.replace(" ", "")
+            startswith_36_or_06 = mobile_number_string.startswith("+36") or mobile_number_string.startswith("06")
+            contains_20_30_70 = "20" in mobile_number_string or "30" in mobile_number_string\
                                     or "70" in mobile_number_string
-                valid_length = len(mobile_number_string) == 11
+            valid_length = len(mobile_number_string) == 11
 
-                isvalid = startswith_36_or_06 and contains_20_30_70 and valid_length
+            isvalid = startswith_36_or_06 and contains_20_30_70 and valid_length
 
-                if not isvalid:         # If any of the above conditions is False it raises a ValueError
-                    raise ValueError
-
-            except ValueError:
+            if not isvalid:         # If it's not a valid address, the user gets this message.
                 print("The given '%s' mobile number is not in a valid format!" % mobile_number)
+
+            if not startswith_36_or_06:     # If the number misses 36 or 06, the user gets this message.
+                print("Please specify your number and add '36' or '06' at the beginning!")
+
+            if not contains_20_30_70:       # If the number misses the specifying number of the provider,
+                print("Please specify your provider: 20/30/70 !")   # the user gets this message.
+
+            if not valid_length:        # If the number is not in a valid length, the user gets this message.
+                print("Please enter a mobile number with a valid (11 number) length!")
 
         return mobile_number
 
