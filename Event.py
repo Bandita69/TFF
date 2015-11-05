@@ -16,7 +16,16 @@ class EventData(object):
     # Definition explanation comes here...
     @staticmethod
     def get_donation_start():
-        return True
+        global don_start
+        isvaild = False
+        while not isvaild:
+            data = input("Enter your Start of donation (HH:MM):")
+            try:
+                don_start = datetime.strptime(data, "%H:%M") # Csak akkor engedi tovább az adatot ha ilyen formátumba van
+                isvaild = True
+            except ValueError:
+                print(data, "is not a valid time! HH:MM. ex: 13:10")
+        return don_start
 
     # @Bandi
     # Definition explanation comes here... A donation event vége. HH:MM formátmban, pl 12:10
@@ -29,7 +38,10 @@ class EventData(object):
             data = input("Enter your End of donation (HH:MM):")
             try:
                 don_end = datetime.strptime(data, "%H:%M") # Csak akkor engedi tovább az adatot ha ilyen formátumba van
-                isvaild = True
+                if don_start < don_end:
+                    isvaild = True
+                else:
+                    print("Donation End have to be later thad Donation Start! (Donation start:", don_start.strftime("%H:%M"), "):")
             except ValueError:
                 print(data, "is not a valid time! HH:MM. ex: 13:10")
         return don_end
